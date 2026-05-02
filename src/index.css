@@ -109,4 +109,29 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 } */
+
 @import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background: #f7f8fb;
+  color: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f7f8fb;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}

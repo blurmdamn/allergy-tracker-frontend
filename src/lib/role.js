@@ -1,0 +1,1 @@
+export { getRole } from "./auth";
