@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Profile from "./pages/Profile.jsx";
 import Medications from "./pages/Medications.jsx";
 import Placeholder from "./pages/Placeholder.jsx";
+import AllergyInfo from "./pages/AllergyInfo.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/layout/AppLayout.jsx";
@@ -40,7 +41,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Информация об аллергии */}
           <Route
             path="allergy-info"
-            element={<Placeholder title="Информация об аллергии" />}
+            element={<AllergyInfo title="Информация об аллергии" />}
           />
           <Route
             path="allergies"
