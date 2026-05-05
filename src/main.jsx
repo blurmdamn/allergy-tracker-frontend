@@ -7,6 +7,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Profile from "./pages/Profile.jsx";
+import Medications from "./pages/Medications.jsx";
 import Placeholder from "./pages/Placeholder.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
@@ -59,7 +60,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Лекарства */}
           <Route
             path="medications"
-            element={<Placeholder title="Лекарства" />}
+            element={<Medications title="Лекарства" />}
           />
 
           {/* График АСИТ */}

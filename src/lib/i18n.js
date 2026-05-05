@@ -105,6 +105,7 @@ const translations = {
       reports: "Мои результаты",
       reminders: "Настройка напоминаний",
       symptomMonitoring: "Мониторинг симптомов",
+      dailyCheckin: "Мониторинг симптомов",
     },
 
     severity: {
@@ -292,15 +293,26 @@ const translations = {
       sublingualDrops: "Подъязычные капли",
       sublingualTablets: "Подъязычные таблетки",
       injections: "Инъекции",
+      chooseMedication: "Выберите препараты, которые используете сейчас.",
+      selected: "Выбрано",
+      notSelected: "Не выбрано",
       timesPerDay: "Количество приёмов в сутки",
       treatmentEffect: "Эффект от лечения",
+      effectNotSelected: "Не выбрано",
       effectGood: "Хороший успех",
       effectPartial: "Частичный успех",
       effectNone: "Неуспех",
       saveButton: "Сохранить лечение",
+      saving: "Сохраняем...",
       success: "Данные о лечении сохранены",
       loadError: "Не удалось загрузить лекарства",
       saveError: "Не удалось сохранить лекарства",
+      noMedications:
+        "Справочник лекарств пуст. Запустите seed_dicts.py на backend.",
+      activeTreatment: "Активное лечение",
+      noActiveTreatment: "Пока не выбрано ни одного активного препарата.",
+      intakeHint:
+        "При сохранении выбранного препарата также фиксируется текущий эффект лечения.",
     },
 
     dailyCheckin: {
@@ -433,6 +445,7 @@ const translations = {
       reports: "My results",
       reminders: "Reminder settings",
       symptomMonitoring: "Symptom monitoring",
+      dailyCheckin: "Symptom monitoring",
     },
 
     severity: {
@@ -619,15 +632,26 @@ const translations = {
       sublingualDrops: "Sublingual drops",
       sublingualTablets: "Sublingual tablets",
       injections: "Injections",
+      chooseMedication: "Select the medications you are currently using.",
+      selected: "Selected",
+      notSelected: "Not selected",
       timesPerDay: "Number of intakes per day",
       treatmentEffect: "Treatment effect",
+      effectNotSelected: "Not selected",
       effectGood: "Good success",
       effectPartial: "Partial success",
       effectNone: "No success",
       saveButton: "Save treatment",
+      saving: "Saving...",
       success: "Treatment data saved",
       loadError: "Failed to load medications",
       saveError: "Failed to save medications",
+      noMedications:
+        "Medication dictionary is empty. Run seed_dicts.py on the backend.",
+      activeTreatment: "Active treatment",
+      noActiveTreatment: "No active medication has been selected yet.",
+      intakeHint:
+        "When saving a selected medication, the current treatment effect is also recorded.",
     },
 
     dailyCheckin: {
@@ -761,6 +785,7 @@ const translations = {
       reports: "Менің нәтижелерім",
       reminders: "Еске салғыштарды баптау",
       symptomMonitoring: "Симптомдарды бақылау",
+      dailyCheckin: "Симптомдарды бақылау",
     },
 
     severity: {
@@ -950,15 +975,26 @@ const translations = {
       sublingualDrops: "Тіл астына тамызатын тамшылар",
       sublingualTablets: "Тіл астына салатын таблеткалар",
       injections: "Инъекциялар",
+      chooseMedication: "Қазір қолданып жүрген дәрілерді таңдаңыз.",
+      selected: "Таңдалды",
+      notSelected: "Таңдалмаған",
       timesPerDay: "Тәулігіне қабылдау саны",
       treatmentEffect: "Ем әсері",
+      effectNotSelected: "Таңдалмаған",
       effectGood: "Жақсы нәтиже",
       effectPartial: "Жартылай нәтиже",
       effectNone: "Нәтиже жоқ",
       saveButton: "Емді сақтау",
+      saving: "Сақталуда...",
       success: "Ем деректері сақталды",
       loadError: "Дәрілерді жүктеу мүмкін болмады",
       saveError: "Дәрілерді сақтау мүмкін болмады",
+      noMedications:
+        "Дәрілер анықтамалығы бос. Backend жағында seed_dicts.py іске қосыңыз.",
+      activeTreatment: "Белсенді ем",
+      noActiveTreatment: "Әзірге белсенді дәрі таңдалмаған.",
+      intakeHint:
+        "Таңдалған дәріні сақтаған кезде емнің ағымдағы әсері де белгіленеді.",
     },
 
     dailyCheckin: {
