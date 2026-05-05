@@ -5,15 +5,43 @@ import { getLanguage, t } from "../../lib/i18n";
 function getNavigation(language) {
   return {
     patient: [
-      { to: "/", label: t("sidebar.dashboard", language), end: true },
-      { to: "/profile", label: t("sidebar.profile", language) },
-      { to: "/allergies", label: t("sidebar.allergies", language) },
-      { to: "/daily-checkin", label: t("sidebar.dailyCheckin", language) },
-      { to: "/medications", label: t("sidebar.medications", language) },
-      { to: "/asit", label: t("sidebar.asit", language) },
-      { to: "/calendar", label: t("sidebar.calendar", language) },
-      { to: "/reports", label: t("sidebar.reports", language) },
-      { to: "/reminders", label: t("sidebar.reminders", language) },
+      {
+        to: "/",
+        label: t("sidebar.dashboard", language),
+        end: true,
+      },
+      {
+        to: "/profile",
+        label: t("sidebar.profile", language),
+      },
+      {
+        to: "/allergy-info",
+        label: t("sidebar.allergies", language),
+      },
+      {
+        to: "/symptom-monitoring",
+        label: t("sidebar.symptomMonitoring", language),
+      },
+      {
+        to: "/medications",
+        label: t("sidebar.medications", language),
+      },
+      {
+        to: "/asit-schedule",
+        label: t("sidebar.asit", language),
+      },
+      {
+        to: "/calendar",
+        label: t("sidebar.calendar", language),
+      },
+      {
+        to: "/results",
+        label: t("sidebar.reports", language),
+      },
+      {
+        to: "/reminders",
+        label: t("sidebar.reminders", language),
+      },
     ],
   };
 }
@@ -26,7 +54,7 @@ function SidebarInner({ roleName, items, onNavigate, language }) {
           {t("layout.role", language)}
         </div>
 
-        <div className="mt-1 text-sm font-medium text-slate-900">
+        <div className="mt-1 text-sm font-semibold text-slate-900">
           {roleName}
         </div>
       </div>
@@ -42,10 +70,11 @@ function SidebarInner({ roleName, items, onNavigate, language }) {
             onClick={onNavigate}
             className={({ isActive }) =>
               [
-                "block rounded-xl px-3 py-2 text-sm transition",
+                "block rounded-xl px-3 py-2.5 text-sm transition",
+                "whitespace-normal wrap-break-word leading-5",
                 "hover:bg-emerald-50 hover:text-emerald-700",
                 isActive
-                  ? "bg-emerald-50 font-medium text-emerald-700"
+                  ? "bg-emerald-50 font-semibold text-emerald-700"
                   : "text-slate-700",
               ].join(" ")
             }
