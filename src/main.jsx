@@ -10,6 +10,7 @@ import Profile from "./pages/Profile.jsx";
 import Medications from "./pages/Medications.jsx";
 import Placeholder from "./pages/Placeholder.jsx";
 import AllergyInfo from "./pages/AllergyInfo.jsx";
+import SymptomMonitoring from "./pages/SymptomMonitoring.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/layout/AppLayout.jsx";
@@ -51,7 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Мониторинг симптомов */}
           <Route
             path="symptom-monitoring"
-            element={<Placeholder title="Мониторинг симптомов" />}
+            element={<SymptomMonitoring title="Мониторинг симптомов" />}
           />
           <Route
             path="daily-checkin"
