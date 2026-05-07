@@ -12,6 +12,7 @@ import Placeholder from "./pages/Placeholder.jsx";
 import AllergyInfo from "./pages/AllergyInfo.jsx";
 import SymptomMonitoring from "./pages/SymptomMonitoring.jsx";
 import AsitSchedule from "./pages/AsitSchedule.jsx";
+import Calendar from "./pages/Calendar.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/layout/AppLayout.jsx";
@@ -79,7 +80,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Календарь */}
           <Route
             path="calendar"
-            element={<Placeholder title="Календарь" />}
+            element={<Calendar title="Календарь" />}
           />
 
           {/* Мои результаты */}
