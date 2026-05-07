@@ -11,6 +11,7 @@ import Medications from "./pages/Medications.jsx";
 import Placeholder from "./pages/Placeholder.jsx";
 import AllergyInfo from "./pages/AllergyInfo.jsx";
 import SymptomMonitoring from "./pages/SymptomMonitoring.jsx";
+import AsitSchedule from "./pages/AsitSchedule.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/layout/AppLayout.jsx";
@@ -68,7 +69,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* График АСИТ */}
           <Route
             path="asit-schedule"
-            element={<Placeholder title="График АСИТ" />}
+            element={<AsitSchedule title="График АСИТ" />}
           />
           <Route
             path="asit"
