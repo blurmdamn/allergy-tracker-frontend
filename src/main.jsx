@@ -13,6 +13,7 @@ import AllergyInfo from "./pages/AllergyInfo.jsx";
 import SymptomMonitoring from "./pages/SymptomMonitoring.jsx";
 import AsitSchedule from "./pages/AsitSchedule.jsx";
 import Calendar from "./pages/Calendar.jsx";
+import Statistics from "./pages/Statistics.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/layout/AppLayout.jsx";
@@ -86,7 +87,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Мои результаты */}
           <Route
             path="results"
-            element={<Placeholder title="Мои результаты" />}
+            element={<Statistics title="Мои результаты" />}
           />
           <Route
             path="reports"
