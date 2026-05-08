@@ -5,6 +5,7 @@ import { getRole } from "../lib/role";
 import { Card, CardHeader, CardBody } from "../components/ui/Card";
 import {
   formatDate,
+  getAsitStatusLabel,
   getSeverityClass,
   getSeverityLabel,
 } from "../lib/format";
@@ -27,6 +28,7 @@ function StatCard({ label, value, description }) {
     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="text-sm text-slate-500">{label}</div>
       <div className="mt-2 text-2xl font-semibold text-slate-900">{value}</div>
+
       {description && (
         <div className="mt-1 text-sm text-slate-500">{description}</div>
       )}
@@ -244,7 +246,7 @@ export default function Dashboard() {
                   <span className="font-medium text-slate-900">
                     {t("dashboard.status", language)}:
                   </span>{" "}
-                  {nextAsitEvent.status}
+                  {getAsitStatusLabel(nextAsitEvent.status, language)}
                 </div>
 
                 {nextAsitEvent.dose_value && (
