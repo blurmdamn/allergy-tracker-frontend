@@ -487,3 +487,98 @@ export const STATISTICS_TEXT = {
   };
   
   export const SEVERITY_ORDER = ["none", "mild", "moderate", "high", "severe"];
+
+  export const MEDICATION_LABELS = {
+    cetirizine: { ru: "Цетиризин", en: "Cetirizine", kk: "Цетиризин" },
+    "Цетиризин": { ru: "Цетиризин", en: "Cetirizine", kk: "Цетиризин" },
+  
+    levocetirizine: {
+      ru: "Левоцетиризин",
+      en: "Levocetirizine",
+      kk: "Левоцетиризин",
+    },
+    "Левоцетиризин": {
+      ru: "Левоцетиризин",
+      en: "Levocetirizine",
+      kk: "Левоцетиризин",
+    },
+  
+    loratadine: { ru: "Лоратадин", en: "Loratadine", kk: "Лоратадин" },
+    "Лоратадин": { ru: "Лоратадин", en: "Loratadine", kk: "Лоратадин" },
+  
+    desloratadine: {
+      ru: "Дезлоратадин",
+      en: "Desloratadine",
+      kk: "Дезлоратадин",
+    },
+    "Дезлоратадин": {
+      ru: "Дезлоратадин",
+      en: "Desloratadine",
+      kk: "Дезлоратадин",
+    },
+  
+    bilastine: { ru: "Биластин", en: "Bilastine", kk: "Биластин" },
+    "Биластин": { ru: "Биластин", en: "Bilastine", kk: "Биластин" },
+  
+    fexofenadine: {
+      ru: "Фексофенадин",
+      en: "Fexofenadine",
+      kk: "Фексофенадин",
+    },
+    "Фексофенадин": {
+      ru: "Фексофенадин",
+      en: "Fexofenadine",
+      kk: "Фексофенадин",
+    },
+  
+    ebastine: { ru: "Эбастин", en: "Ebastine", kk: "Эбастин" },
+    "Эбастин": { ru: "Эбастин", en: "Ebastine", kk: "Эбастин" },
+  
+    rupatadine: { ru: "Рупатадин", en: "Rupatadine", kk: "Рупатадин" },
+    "Рупатадин": { ru: "Рупатадин", en: "Rupatadine", kk: "Рупатадин" },
+  
+    montelukast: { ru: "Монтелукаст", en: "Montelukast", kk: "Монтелукаст" },
+    "Монтелукаст": { ru: "Монтелукаст", en: "Montelukast", kk: "Монтелукаст" },
+  
+    roxall_sulgen: { ru: "Роксаль Сульген", en: "Roxall Sulgen", kk: "Роксаль Сульген" },
+    "Роксаль Сульген": { ru: "Роксаль Сульген", en: "Roxall Sulgen", kk: "Роксаль Сульген" },
+  
+    inmunotek_oraltek: {
+      ru: "Инмунотек Оралтек",
+      en: "Inmunotek Oraltek",
+      kk: "Инмунотек Оралтек",
+    },
+    "Инмунотек Оралтек": {
+      ru: "Инмунотек Оралтек",
+      en: "Inmunotek Oraltek",
+      kk: "Инмунотек Оралтек",
+    },
+  
+    lofarma: { ru: "Лофарма", en: "Lofarma", kk: "Лофарма" },
+    "Лофарма": { ru: "Лофарма", en: "Lofarma", kk: "Лофарма" },
+  
+    antipollin: { ru: "Антиполлин", en: "Antipollin", kk: "Антиполлин" },
+    "Антиполлин": { ru: "Антиполлин", en: "Antipollin", kk: "Антиполлин" },
+  
+    roxall_clustoid: {
+      ru: "Роксаль Кластоид",
+      en: "Roxall Clustoid",
+      kk: "Роксаль Кластоид",
+    },
+    "Роксаль Кластоид": {
+      ru: "Роксаль Кластоид",
+      en: "Roxall Clustoid",
+      kk: "Роксаль Кластоид",
+    },
+  
+    inmunotek_clustek: {
+      ru: "Инмунотек Клюстек",
+      en: "Inmunotek Clustek",
+      kk: "Инмунотек Клюстек",
+    },
+    "Инмунотек Клюстек": {
+      ru: "Инмунотек Клюстек",
+      en: "Inmunotek Clustek",
+      kk: "Инмунотек Клюстек",
+    },
+  };
