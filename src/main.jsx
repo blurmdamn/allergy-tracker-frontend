@@ -14,6 +14,7 @@ import SymptomMonitoring from "./pages/SymptomMonitoring.jsx";
 import AsitSchedule from "./pages/AsitSchedule.jsx";
 import Calendar from "./pages/Calendar.jsx";
 import Statistics from "./pages/Statistics.jsx";
+import Reminders from "./pages/Reminders.jsx";
 
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/layout/AppLayout.jsx";
@@ -97,7 +98,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           {/* Напоминания */}
           <Route
             path="reminders"
-            element={<Placeholder title="Настройка напоминаний" />}
+            element={<Reminders title="Настройка напоминаний" />}
           />
 
           {/* Любая неизвестная страница внутри приложения */}
