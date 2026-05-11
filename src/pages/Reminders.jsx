@@ -24,6 +24,7 @@ const TEXT = {
       "Ссылка на Telegram-бота пока недоступна. Проверьте TELEGRAM_BOT_USERNAME на backend.",
     createTitle: "Создать напоминание",
     type: "Тип",
+    repeatType: "Повторение",
     message: "Сообщение",
     scheduledAt: "Дата и время",
     activeMonths: "Активные месяцы",
@@ -45,6 +46,7 @@ const TEXT = {
     sent: "Отправлено",
     waiting: "Ожидает отправки",
     allYear: "Круглый год",
+    reminderCreated: "Напоминание создано",
     botConnectedHint:
       "Теперь можно создать напоминание. Когда наступит указанное время, бот отправит сообщение в Telegram.",
     botNotConnectedHint:
@@ -55,9 +57,16 @@ const TEXT = {
       questionnaire: "Контрольный опрос",
       custom: "Другое",
     },
+    repeat: {
+      none: "Однократно",
+      daily: "Ежедневно",
+      weekly: "Еженедельно",
+      monthly: "Ежемесячно",
+    },
     defaultMessages: {
       daily_checkin: "Не забудьте заполнить дневник симптомов",
-      asit_visit: "Через неделю должна быть очередная инъекция АСИТ — запланируйте визит к врачу",
+      asit_visit:
+        "Через неделю должна быть очередная инъекция АСИТ — запланируйте визит к врачу",
       questionnaire: "Пройдите контрольный опрос для оценки состояния",
       custom: "Напоминание Allergy Tracker",
     },
@@ -96,6 +105,7 @@ const TEXT = {
       "The Telegram bot link is not available yet. Check TELEGRAM_BOT_USERNAME on the backend.",
     createTitle: "Create reminder",
     type: "Type",
+    repeatType: "Repeat",
     message: "Message",
     scheduledAt: "Date and time",
     activeMonths: "Active months",
@@ -117,6 +127,7 @@ const TEXT = {
     sent: "Sent",
     waiting: "Pending",
     allYear: "All year",
+    reminderCreated: "Reminder created",
     botConnectedHint:
       "You can now create reminders. When the scheduled time comes, the bot will send a Telegram message.",
     botNotConnectedHint:
@@ -127,9 +138,16 @@ const TEXT = {
       questionnaire: "Control questionnaire",
       custom: "Custom",
     },
+    repeat: {
+      none: "Once",
+      daily: "Daily",
+      weekly: "Weekly",
+      monthly: "Monthly",
+    },
     defaultMessages: {
       daily_checkin: "Do not forget to complete your symptom diary",
-      asit_visit: "Your next ASIT injection is coming soon — schedule a doctor visit",
+      asit_visit:
+        "Your next ASIT injection is coming soon — schedule a doctor visit",
       questionnaire: "Complete the control questionnaire to assess your condition",
       custom: "Allergy Tracker reminder",
     },
@@ -168,6 +186,7 @@ const TEXT = {
       "Telegram-бот сілтемесі қолжетімсіз. Backend ішінде TELEGRAM_BOT_USERNAME мәнін тексеріңіз.",
     createTitle: "Еске салу жасау",
     type: "Түрі",
+    repeatType: "Қайталау",
     message: "Хабарлама",
     scheduledAt: "Күні мен уақыты",
     activeMonths: "Белсенді айлар",
@@ -189,6 +208,7 @@ const TEXT = {
     sent: "Жіберілді",
     waiting: "Күтуде",
     allYear: "Жыл бойы",
+    reminderCreated: "Еске салу жасалды",
     botConnectedHint:
       "Енді еске салу жасауға болады. Уақыты келгенде бот Telegram арқылы хабарлама жібереді.",
     botNotConnectedHint:
@@ -199,9 +219,16 @@ const TEXT = {
       questionnaire: "Бақылау сауалнамасы",
       custom: "Басқа",
     },
+    repeat: {
+      none: "Бір рет",
+      daily: "Күн сайын",
+      weekly: "Апта сайын",
+      monthly: "Ай сайын",
+    },
     defaultMessages: {
       daily_checkin: "Симптомдар күнделігін толтыруды ұмытпаңыз",
-      asit_visit: "Келесі АСИТ инъекциясы жақында — дәрігерге визит жоспарлаңыз",
+      asit_visit:
+        "Келесі АСИТ инъекциясы жақында — дәрігерге визит жоспарлаңыз",
       questionnaire: "Жағдайды бағалау үшін бақылау сауалнамасын өтіңіз",
       custom: "Allergy Tracker еске салуы",
     },
@@ -228,6 +255,8 @@ const REMINDER_TYPES = [
   "questionnaire",
   "custom",
 ];
+
+const REPEAT_TYPES = ["none", "daily", "weekly", "monthly"];
 
 function getText(language) {
   return TEXT[language] || TEXT.ru;
@@ -303,7 +332,13 @@ function MonthButton({ active, children, onClick }) {
   );
 }
 
-function ActionButton({ children, onClick, disabled, variant = "primary", type = "button" }) {
+function ActionButton({
+  children,
+  onClick,
+  disabled,
+  variant = "primary",
+  type = "button",
+}) {
   const base =
     "inline-flex items-center justify-center rounded-[22px] px-5 py-3 text-sm font-semibold transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60";
 
@@ -312,10 +347,8 @@ function ActionButton({ children, onClick, disabled, variant = "primary", type =
       "border border-emerald-300/70 bg-[linear-gradient(135deg,rgba(16,185,129,0.96),rgba(5,150,105,0.86))] text-white shadow-[0_14px_34px_rgba(16,185,129,0.22),inset_0_1px_0_rgba(255,255,255,0.35)] hover:scale-[1.01]",
     secondary:
       "border border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50",
-    danger:
-      "border border-red-200 bg-red-50 text-red-700 hover:bg-red-100",
-    soft:
-      "border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100",
+    danger: "border border-red-200 bg-red-50 text-red-700 hover:bg-red-100",
+    soft: "border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100",
   };
 
   return (
@@ -338,6 +371,7 @@ export default function Reminders() {
   const [reminders, setReminders] = React.useState([]);
 
   const [type, setType] = React.useState("daily_checkin");
+  const [repeatType, setRepeatType] = React.useState("daily");
   const [message, setMessage] = React.useState(
     text.defaultMessages.daily_checkin
   );
@@ -359,6 +393,22 @@ export default function Reminders() {
 
   React.useEffect(() => {
     setMessage(text.defaultMessages[type] || text.defaultMessages.custom);
+
+    if (type === "daily_checkin") {
+      setRepeatType("daily");
+    }
+
+    if (type === "asit_visit") {
+      setRepeatType("none");
+    }
+
+    if (type === "questionnaire") {
+      setRepeatType("weekly");
+    }
+
+    if (type === "custom") {
+      setRepeatType("none");
+    }
   }, [type, language]);
 
   React.useEffect(() => {
@@ -366,7 +416,7 @@ export default function Reminders() {
 
     const timer = window.setInterval(() => {
       loadTelegramStatus({ silent: true });
-    }, 5000);
+    }, 8000);
 
     return () => window.clearInterval(timer);
   }, [isTelegramLinked]);
@@ -462,6 +512,7 @@ export default function Reminders() {
 
       await api.post("/me/reminders", {
         type,
+        repeat_type: repeatType,
         message,
         scheduled_at: scheduledAt,
         active_months: activeMonths.length > 0 ? activeMonths : null,
@@ -472,7 +523,7 @@ export default function Reminders() {
       setMessage(text.defaultMessages[type] || text.defaultMessages.custom);
 
       await loadReminders();
-      setSuccess("Напоминание создано");
+      setSuccess(text.reminderCreated);
     } catch (err) {
       setError(getApiError(err, text.saveError));
     } finally {
@@ -509,6 +560,10 @@ export default function Reminders() {
 
   function getReminderTypeLabel(value) {
     return text.types[value] || value;
+  }
+
+  function getRepeatTypeLabel(value) {
+    return text.repeat[value] || text.repeat.none;
   }
 
   function getMonthsLabel(months) {
@@ -667,7 +722,7 @@ export default function Reminders() {
 
             <CardBody>
               <form onSubmit={createReminder} className="space-y-5">
-                <div className="grid gap-4 lg:grid-cols-2">
+                <div className="grid gap-4 lg:grid-cols-3">
                   <div>
                     <label className="mb-1 block text-sm font-medium text-slate-700">
                       {text.type}
@@ -681,6 +736,24 @@ export default function Reminders() {
                       {REMINDER_TYPES.map((item) => (
                         <option key={item} value={item}>
                           {getReminderTypeLabel(item)}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="mb-1 block text-sm font-medium text-slate-700">
+                      {text.repeatType}
+                    </label>
+
+                    <select
+                      value={repeatType}
+                      onChange={(event) => setRepeatType(event.target.value)}
+                      className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-600/15"
+                    >
+                      {REPEAT_TYPES.map((item) => (
+                        <option key={item} value={item}>
+                          {getRepeatTypeLabel(item)}
                         </option>
                       ))}
                     </select>
@@ -813,10 +886,26 @@ export default function Reminders() {
 
                             <div>
                               <span className="font-medium text-slate-700">
+                                {text.repeatType}:
+                              </span>{" "}
+                              {getRepeatTypeLabel(reminder.repeat_type)}
+                            </div>
+
+                            <div>
+                              <span className="font-medium text-slate-700">
                                 {text.activeMonths}:
                               </span>{" "}
                               {getMonthsLabel(reminder.active_months)}
                             </div>
+
+                            {reminder.sent_at && (
+                              <div>
+                                <span className="font-medium text-slate-700">
+                                  {text.sent}:
+                                </span>{" "}
+                                {formatDateTime(reminder.sent_at, language)}
+                              </div>
+                            )}
                           </div>
                         </div>
 
